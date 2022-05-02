@@ -26,19 +26,23 @@ rolesList.push(tempRole);
 console.log(rolesList);
 }
 
-//Randomizes the Roles and Shows them
+//Randomizes the Roles
 function randomizeRoles(){
-var listLength = rolesList.length;
-for(var i = 0; i < listLength * listLength; i++){
-    var role1 = Math.floor(Math.random()*listLength);
-    var role2 = Math.floor(Math.random()*listLength);
-    var temp = rolesList[role1];
-    rolesList[role1] = rolesList[role2];
-    rolesList[role2] = temp;
+    var listLength = rolesList.length;
+    for(var i = 0; i < listLength * listLength; i++){
+        var role1 = Math.floor(Math.random()*listLength);
+        var role2 = Math.floor(Math.random()*listLength);
+        swapRoles(role1,role2)
+        }
+    console.log(rolesList);
     }
-console.log(rolesList);
-}
 
+//Swaps the roles
+function swapRoles(role1,role2){
+        var temp = rolesList[role1];
+        rolesList[role1] = rolesList[role2];
+        rolesList[role2] = temp;
+}
 //Shows The Person Their Role
 function showRole(){
 alert("Your Role is " + rolesList[roleCounter]);
@@ -52,7 +56,7 @@ alert("Have Fun With Your Game!");
 var mainBox = document.createElement("div");
 mainBox.style.border = "solid";
 mainBox.style.borderColor = "black";
-mainBox.style.width = "40%";
+mainBox.style.width = "45%";
 mainBox.style.height = "200px";
 mainBox.style.borderRadius = "15px";
 mainBox.style.padding = "5px";
